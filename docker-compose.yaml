@@ -7,10 +7,16 @@ services:
     build:
       context: .
       dockerfile: docker/deno/Dockerfile
+      #      args:
+      #        USER_ID: 501
+      #        GROUP_ID: 204
     volumes:
-      - .:/www/deno-fresh-test
+      - .:/home/deno/deno-fresh-test
     ports:
       - "8001:8001"
     # restart: unless-stopped
     command: ["task", "serve"]
-  
+
+    #  volumes:
+    #    deno:
+

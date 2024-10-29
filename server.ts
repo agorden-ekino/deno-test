@@ -1,5 +1,5 @@
-import { Application } from "jsr:@oak/oak/application";
-import { Router } from "jsr:@oak/oak/router";
+import { Application } from "@oak/oak/application";
+import { Router } from "@oak/oak/router";
 
 const router = new Router();
 router.get("/", (ctx) => {
