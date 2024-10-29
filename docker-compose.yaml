@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  deno-fresh-test:
+    image: denoland/deno:2.0.3
+    container_name: deno-fresh-test
+    build:
+      context: .
+      dockerfile: docker/deno/Dockerfile
+    volumes:
+      - .:/www/deno-fresh-test
+    ports:
+      - "8001:8001"
+    # restart: unless-stopped
+    command: ["task", "serve"]
+  
