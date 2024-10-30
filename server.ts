@@ -1,5 +1,10 @@
 import { Application, Router } from "@oak/oak";
 
+const fakeUsersResponse = await fetch(
+    "https://jsonplaceholder.typicode.com/users"
+);
+const fakeUserData = await fakeUsersResponse.json();
+
 const router = new Router();
 // ctx means context
 router
@@ -15,6 +20,9 @@ router
   })
   .get("/plop", (ctx) => {
     ctx.response.body = "PLOP";
+  })
+  .get("/fake-user", (ctx) => {
+      ctx.response.body = fakeUserData;
   });
 
 const app = new Application();
