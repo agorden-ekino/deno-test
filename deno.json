@@ -1,10 +1,11 @@
 {
   "tasks": {
     "dev": "deno run --watch main.ts",
-    "serve": "deno run --allow-net server.ts"
+    "serve": "deno run --allow-net --watch-hmr server.ts"
   },
   "imports": {
     "@oak/oak": "jsr:@oak/oak@^17.1.2",
     "@std/assert": "jsr:@std/assert@1"
-  }
+  },
+  "vendor": true
 }
